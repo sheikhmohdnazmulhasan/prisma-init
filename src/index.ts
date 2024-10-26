@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { find } from './find';
 
 const prisma = new PrismaClient();
 
@@ -13,7 +14,10 @@ async function main() {
 
     const result = await prisma.post.findMany()
 
-    console.log(result);
+    console.log(await find());
 }
 
 main()
+
+
+// console.log(await find());
