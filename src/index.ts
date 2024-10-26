@@ -9,7 +9,7 @@ import { upsert } from './upsert';
 
 (async function () {
 
-    // console.log(await find());
+    console.log(await find());
     // console.log(await findUnique());
     // console.log(await createOne());
     // console.log(await createMeany());
@@ -18,5 +18,5 @@ import { upsert } from './upsert';
     // console.log(await deleteOne());
     // console.log(await deleteMany());
 
-    console.log(await upsert());
+    // console.log(await upsert());
 })()
