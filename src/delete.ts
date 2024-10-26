@@ -8,4 +8,14 @@ export async function deleteOne() {
         }
     });
     return result
+};
+
+export async function deleteMany() {
+    const result = await prisma.post.deleteMany({
+        where: {
+            title: 'title updated from hello title'
+        }
+    });
+
+    return result
 }

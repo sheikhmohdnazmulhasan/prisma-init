@@ -3,7 +3,7 @@
 import { find, findUnique } from './find';
 import { createMeany, createOne } from './create';
 import { updatedMany, updateOne } from './update';
-import { deleteOne } from './delete';
+import { deleteMany, deleteOne } from './delete';
 
 
 (async function () {
@@ -14,5 +14,6 @@ import { deleteOne } from './delete';
     // console.log(await createMeany());
     // console.log(await updateOne());
     // console.log(await updatedMany());
-    console.log(await deleteOne());
+    // console.log(await deleteOne());
+    console.log(await deleteMany());
 })()
