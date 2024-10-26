@@ -10,3 +10,13 @@ export async function find() {
 
     return result;
 }
+
+export async function findUnique() {
+    const result = await prisma.post.findUniqueOrThrow({
+        where: {
+            id: 10
+        }
+    });
+
+    return result
+}
