@@ -26,6 +26,11 @@ model User {
   role     user_role
 }
 
+model profile {
+  id  Int     @id @default(autoincrement())
+  bio String?
+}
+
 enum user_role {
   user
   admin
