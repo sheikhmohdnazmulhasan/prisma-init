@@ -48,4 +48,29 @@ export async function creteCategories() {
     });
 
     return result
+};
+
+export async function cretePost() {
+    const result = await prisma.post.create({
+        data: {
+            title: 'this is title',
+            content: 'this is post content',
+            authorId: 1,
+            postCategory: {
+                create: {
+                    // categoryId: 1
+                    category: {
+                        connect: {
+                            id: 1
+                        }
+                    }
+                }
+            }
+        },
+        include: {
+            postCategory: true
+        }
+    });
+
+    return result
 }
