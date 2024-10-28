@@ -24,4 +24,28 @@ export async function creteUserProfile() {
     });
 
     return result
+};
+
+export async function creteCategories() {
+    const result = await prisma.category.createMany({
+        data: [
+            { name: "Web Development" },
+            { name: "Artificial Intelligence" },
+            { name: "Data Science" },
+            { name: "Cybersecurity" },
+            { name: "Cloud Computing" },
+            { name: "Blockchain" },
+            { name: "Mobile Development" },
+            { name: "DevOps" },
+            { name: "Programming Languages" },
+            { name: "Internet of Things (IoT)" },
+            { name: "Software Engineering" },
+            { name: "Tech News" },
+            { name: "Gadgets" },
+            { name: "AR/VR" },
+            { name: "Gaming" }
+        ]
+    });
+
+    return result
 }
