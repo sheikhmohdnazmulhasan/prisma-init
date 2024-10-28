@@ -11,16 +11,24 @@ export async function relationalQs() {
     // }).post();
 
     // ! populate
-    const result = await prisma.user.findUnique({
-        where: {
-            id: 1
-        },
+    // const result = await prisma.user.findUnique({
+    //     where: {
+    //         id: 1
+    //     },
+    //     include: {
+    //         profile: true
+    //     }
+    // })
+
+    // ! relational filter
+
+    const result = await prisma.user.findMany({
         include: {
-            profile: true
+            post: true
         }
     })
 
-
+    console.dir(result, { depth: Infinity });
     return result
 
 }
