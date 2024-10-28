@@ -57,14 +57,17 @@ export async function cretePost() {
             content: 'this is post content',
             authorId: 1,
             postCategory: {
-                create: {
-                    // categoryId: 1
-                    category: {
-                        connect: {
-                            id: 1
-                        }
-                    }
-                }
+                create: [
+                    { categoryId: 1 },
+                    { categoryId: 2 },
+                    // Add more categories as needed
+
+                    // category: {
+                    //     connect: {
+                    //         id: 1
+                    //     }
+                    // }
+                ]
             }
         },
         include: {
