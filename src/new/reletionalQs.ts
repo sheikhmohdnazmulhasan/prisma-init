@@ -23,12 +23,22 @@ export async function relationalQs() {
     // ! relational filter
 
     const result = await prisma.user.findMany({
+        where: {
+            post: {
+                some: {
+                    published: false
+                }
+            }
+        },
         include: {
-            post: true
+            post: {
+                where: {
+                    published: false
+                }
+            }
         }
-    })
-
-    console.dir(result, { depth: Infinity });
+    });
+    // console.dir(result, { depth: Infinity });
     return result
 
 }
