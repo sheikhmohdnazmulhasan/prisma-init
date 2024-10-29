@@ -4,7 +4,10 @@ const prisma = new PrismaClient();
 
 export async function groupBy() {
     const result = await prisma.post.groupBy({
-        by: ['published']
+        by: ['published'],
+        _count: {
+            id: true
+        }
     });
 
     return result
