@@ -1,7 +1,7 @@
 // import { creteUser } from "./new/create";
 
 import { creteCategories, cretePost, creteUserProfile } from "./new/create";
-import { avgAge, sumOfAge } from "./new/m57/aggregate";
+import { avgAge, count, sumOfAge } from "./new/m57/aggregate";
 import { relationalQs } from "./new/reletionalQs";
 
 (async function () {
@@ -11,6 +11,8 @@ import { relationalQs } from "./new/reletionalQs";
     // console.log(await cretePost());
     // console.log(await relationalQs());
     // console.log(await avgAge());
-    console.log(await sumOfAge());
+    // console.log(await sumOfAge());
+
+    console.log(await count());
 
 })()

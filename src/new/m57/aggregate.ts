@@ -20,4 +20,16 @@ export async function sumOfAge() {
     });
 
     return result
+};
+
+export async function count() {
+    const result = await prisma.user.aggregate({
+        _count: {
+            age: true,
+        },
+    });
+
+    const result2 = await prisma.user.count()
+
+    return result2
 }
