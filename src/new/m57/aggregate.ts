@@ -32,4 +32,13 @@ export async function count() {
     const result2 = await prisma.user.count()
 
     return result2
+};
+
+export async function getOldestUser() {
+    const result = await prisma.user.aggregate({
+        _max: {
+            age: true,
+        }
+    });
+    return result
 }
