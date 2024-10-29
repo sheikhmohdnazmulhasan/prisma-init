@@ -41,4 +41,14 @@ export async function getOldestUser() {
         }
     });
     return result
+};
+
+export async function getYoungestUser() {
+    const result = await prisma.user.aggregate({
+        _min: {
+            age: true,
+        }
+    });
+
+    return result
 }
