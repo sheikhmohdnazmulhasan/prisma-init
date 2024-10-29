@@ -10,4 +10,14 @@ export async function avgAge() {
     });
 
     return result
+};
+
+export async function sumOfAge() {
+    const result = await prisma.user.aggregate({
+        _sum: {
+            age: true
+        }
+    });
+
+    return result
 }
