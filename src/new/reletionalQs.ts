@@ -21,23 +21,42 @@ export async function relationalQs() {
     // })
 
     // ! relational filter
+    // To retrieve only users who have at least one published post
 
-    const result = await prisma.user.findMany({
+    // const result = await prisma.user.findMany({
+    //     where: {
+    //         post: {
+    //             some: {
+    //                 published: false
+    //             }
+    //         }
+    //     },
+    //     include: {
+    //         post: {
+    //             where: {
+    //                 published: false
+    //             }
+    //         }
+    //     }
+    // });
+
+    // ! and operator
+    const result = await prisma.post.findMany({
         where: {
-            post: {
-                some: {
-                    published: false
+            AND: [
+                {
+                    published: false,
+                },
+                {
+                    title: {
+                        contains: 'title'
+                    }
                 }
-            }
-        },
-        include: {
-            post: {
-                where: {
-                    published: false
-                }
-            }
+            ]
         }
-    });
+    })
+
+
     // console.dir(result, { depth: Infinity });
     return result
 
