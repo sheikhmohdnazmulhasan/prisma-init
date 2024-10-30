@@ -3,6 +3,7 @@
 import { creteCategories, cretePost, creteUserProfile } from "./new/create";
 import { avgAge, count, getOldestUser, getYoungestUser, sumOfAge } from "./new/m57/aggregate";
 import { groupBy } from "./new/m57/group_by";
+import { batch } from "./new/m57/transaction/batch";
 import { relationalQs } from "./new/reletionalQs";
 
 (async function () {
@@ -15,8 +16,8 @@ import { relationalQs } from "./new/reletionalQs";
     // console.log(await sumOfAge());
     // console.log(await count());
     // console.log(await getOldestUser());
-
     // console.log(await getYoungestUser());
+    // console.log(await groupBy());
 
-    console.log(await groupBy());
+    console.log(await batch());
 })()
